@@ -5,7 +5,7 @@ Built from Zurb Responsive template email - http://zurb.com/playground/responsiv
 
 Demo
 ========
-http://www.kevinbizien.com/newsletter
+http://www.kevinbizien.com/newsletter/index.html
 
 Inspiration
 ========
