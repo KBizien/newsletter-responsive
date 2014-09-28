@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Template newsletter responsive</title>
+		<style>
+		/* ------------------------------------- 
+				RESET STYLES 
+		------------------------------------- */
+		body, #bodyTable, #bodyCell {height:100% !important; margin:0; padding:0; width:100% !important;font-family:Helvetica, Arial, "Lucida Grande", sans-serif;}
+		table{border-collapse:collapse;}
+		table[id=bodyTable] {width:100%!important;margin:auto;max-width:500px!important;color:#7A7A7A;font-weight:normal;}
+		img, a img{border:0; outline:none; text-decoration:none;height:auto; line-height:100%;}
+		a {text-decoration:none !important;border-bottom: 1px solid;}
+		h1, h2, h3, h4, h5, h6{color:#5F5F5F; font-weight:normal; font-family:Helvetica; font-size:26px; line-height:125%; text-align:Left; letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}
+		/* ------------------------------------- 
+				CLIENT-SPECIFIC STYLES 
+		------------------------------------- */
+		.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} /* Force Hotmail/Outlook.com to display line heights normally. */
+		table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up. */
+		#outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "view in browser" message. */
+		img{-ms-interpolation-mode: bicubic;display:block;outline:none; text-decoration:none;} /* Force IE to smoothly render resized images. */
+		body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; font-weight:normal!important;} /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+		/* ------------------------------------- 
+				GLOBAL 
+		------------------------------------- */
+		* { 
+			margin:0;
+			padding:0;
+		}
+		* { font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+
+		img { 
+			max-width: 100%; 
+		}
+		.collapse {
+			margin:0;
+			padding:0;
+		}
+		body {
+			-webkit-font-smoothing:antialiased; 
+			-webkit-text-size-adjust:none; 
+			width: 100%!important; 
+			height: 100%;
+			background-color: #E1E1E1;
+		}
+		#bodyTable{background-color:#E1E1E1;}
+		/* ------------------------------------- 
+				ELEMENTS 
+		------------------------------------- */
+		a { color: #0084b4;}
+		.btn {
+			text-decoration:none;
+			color: #FFF;
+			background-color: #0084b4;
+			padding:10px 16px;
+			font-weight:bold;
+			margin-right:10px;
+			text-align:center;
+			cursor:pointer;
+			display: inline-block;
+			font-size: 22px;
+		}
+		p.callout {
+			padding:15px;
+			background-color:#dddddd;
+			margin-bottom: 15px;
+		}
+		.callout a {
+			font-weight:bold;
+			color: #0084b4;
+		}
+		.social .soc-btn {
+			padding: 10px 7px;
+			font-size:18px;
+			margin-bottom:10px;
+			text-decoration:none;
+			color: #FFF;font-weight:bold;
+			display:block;
+			text-align:center;
+			width: 100%;
+		}
+		a.fb { background-color: #3B5998!important;}
+		a.tw { background-color: #1daced!important;}
+		a.gp { background-color: #DB4A39!important;}
+		/* ------------------------------------- 
+				HEADER 
+		------------------------------------- */
+		table#head-wrap { 
+			max-width: 500px;
+			background-color:#E1E1E1;
+			margin:0 auto!important; /* makes it centered */
+		}
+		/* ------------------------------------- 
+				BODY 
+		------------------------------------- */
+		table#body-wrap { 
+			max-width: 500px;
+			background-color:#FFFFFF;
+			margin:0 auto!important; /* makes it centered */
+		}
+		/* ------------------------------------- 
+				FOOTER 
+		------------------------------------- */
+		table#footer-wrap { 
+			max-width: 500px;
+			background-color:#E1E1E1;
+			margin:0 auto!important; /* makes it centered */
+			clear:both!important;
+		}
+		#footer-wrap .container td.content p {
+			font-size:12px;
+			font-weight: bold;
+		}
+		/* ------------------------------------- 
+				TYPOGRAPHY 
+		------------------------------------- */
+		h1,h2,h3,h4,h5,h6 {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; line-height: 1.1; margin-bottom:15px; color:#000;}
+		h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 75%; color: #6f6f6f; line-height: 0; text-transform: none;}
+		h1 { font-weight:200; font-size: 50px;}
+		h2 { font-weight:200; font-size: 43px;}
+		h3 { font-weight:500; font-size: 33px;}
+		h4 { font-weight:500; font-size: 29px;}
+		h5 { font-weight:900; font-size: 23px;}
+		h6 { font-weight:900; font-size: 20px; text-transform: uppercase;}
+		.collapse { margin:0!important;}
+		p, ul { 
+			margin-bottom: 10px; 
+			font-weight: normal; 
+			font-size:16px; 
+			line-height:1.6;
+		}
+		p.lead { font-size:18px; }
+		p.last { margin-bottom:0px;}
+		ul li {
+			margin-left:5px;
+			list-style-position: inside;
+		}
+		/* --------------------------------------------------- 
+				RESPONSIVENESS
+				Nuke it from orbit. It's the only way to be sure. 
+		------------------------------------------------------ */
+		/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+		.container {
+			display:block!important;
+			clear:both!important;
+		}
+		/* This should also be a block element, so that it will fill 100% of the .container */
+		.content {
+			padding:5px 15px;
+			max-width:500px;
+			margin:0 auto;
+			display:block; 
+		}
+		/* Let's make sure tables in the content area are 100% wide */
+		.content table { width: 100%; }
+		/* Odds and ends */
+		.column {
+			width: 250px;
+			float:left;
+		}
+		.column tr td{ padding: 15px; }
+		.column-wrap { 
+			padding:0!important; 
+			margin:0 auto; 
+			max-width:500px!important;
+		}
+		.column table { width:100%;}
+		/* Be sure to place a .clearer element after each set of columns, just to be safe */
+		.clearer { display: block; clear: both; }
+
+		/* ------------------------------------------- 
+				PHONE
+				For clients that support media queries.
+				Nothing fancy. 
+		-------------------------------------------- */
+		@media only screen and (max-width: 525px) {
+			table[id="head-wrap"], table[id="body-wrap"], table[id="footer-wrap"] {width:100%!important;}
+			a[class="btn"] { display:block!important; margin-bottom:10px!important; background-image:none!important; margin-right:0!important;}
+			div[class="content"] {padding:5px;}
+			div[class="column"] { width: auto!important; float:none!important;}
+			div[class="column"] img {width: 100% !important;}
+		}
+		</style>
+	</head>
+	<body bgcolor="#E1E1E1" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" offset="0">
+		<center style="background-color:#E1E1E1;">
+			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">
+	            <tr>
+	                <td align="center" valign="top" id="bodyCell">
+						<!-- HEADER -->
+						<table id="head-wrap" border="0" cellpadding="0" cellspacing="0" width="500" bgcolor="#E1E1E1">
+							<tr>
+								<td></td>
+								<td class="container">
+									<div class="content" style="padding:0;text-aling:center!important;">
+										<table style="margin:0 auto!important;">
+											<tr>
+												<td align="center">
+													<p style="margin:0;font-size:12px;">If you can't see this message <a href="#" target="_blank">View&nbsp;it&nbsp;in&nbsp;your&nbsp;browser</a>.</p>
+												</td>
+											</tr>
+										</table>
+										<table bgcolor="#0084b4">
+											<tr>
+												<td style="padding:15px;">
+													<h3 style="font-weight:bold;color:#FFFFFF;text-align:center;">Logo</h3>
+													<h6 class="collapse" style="color:#FFFFFF;text-align:center;margin-bottom:10px!important;">Slogan</h6>
+													<p style="color:#FFFFFF;text-align:center;">Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum error amet aperiam est, iusto quia voluptatibus.</p>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+						</table><!-- /HEADER -->
+						<!-- BODY -->
+						<table id="body-wrap" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="500">
+							<tr>
+								<td></td>
+								<td class="container">
+									<div class="content" style="padding:5px 15px!important;">
+										<table>
+											<tr>
+												<td>		
+													<h4 style="padding-top:5px;">Template Newsletter Responsive</h4>				
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet.</p>
+													<!-- Callout Panel -->
+													<p class="callout" bgcolor="#DDDDDD" style="background-color:#DDDDDD!important;padding:15px;margin-bottom: 15px;">
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod. <a href="#" style="font-weight:bold;color: #0084b4;">Test it now!</a>
+													</p><!-- /Callout Panel -->
+													<div style="text-align:center;">
+														<a class="btn" style="text-decoration:none;color: #FFF;background-color: #0084b4;padding:10px 16px;font-weight:bold;margin-right:10px;text-align:center;cursor:pointer;display: inline-block;font-size:22px;">Discover</a>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="content" style="padding:5px 15px!important;">
+											<table>
+												<tr>
+													<td style="padding:15px!important;">
+														<h6>Section image 1</h6>			
+														<img src="http://placehold.it/500x200" alt="image1" />
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi aperiam numquam nemo excepturi dolores! Vel veniam ipsa earum quae numquam, maiores, eius delectus, itaque doloribus et odit, ad atque magni.</p>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td style="padding:15px!important;">				
+														<h6>Section image 2</h6>			
+														<img src="http://placehold.it/500x200" alt="image2" />
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias explicabo molestiae non unde fugiat voluptas at aut magni sapiente! Magnam quidem facere tempore minus, ullam sint, similique dolorum itaque modi.</p>
+													</td>
+												</tr>
+											</table>
+									</div>
+									<div class="content" style="padding:5px 15px!important;">
+											<!-- social network -->
+											<table  class="social" width="100%">
+												<tr>
+													<td style="padding:15px!important;">				
+														<h6>Join us !</h6>
+														<p><a href="#" class="soc-btn fb" bgcolor="#3B5998" style="background-color:#3B5998!important;padding: 10px 7px;font-size:18px;margin-bottom:10px;text-decoration:none;color: #FFF;font-weight:bold;display:block;text-align:center;">Facebook</a> <a href="#" class="soc-btn tw" bgcolor="#1daced" style="background-color:#1daced!important;padding: 10px 7px;font-size:18px;margin-bottom:10px;text-decoration:none;color: #FFF;font-weight:bold;display:block;text-align:center;">Twitter</a> <a href="#" class="soc-btn gp" bgcolor="#DB4A39" style="background-color:#DB4A39!important;padding: 10px 7px;font-size:18px;margin-bottom:10px;text-decoration:none;color: #FFF;font-weight:bold;display:block;text-align:center;">Google+</a></p>
+													</td>
+												</tr>
+											</table>
+											<!-- contact -->
+											<table align="left">
+												<tr>
+													<td style="padding:15px!important;">				
+														<h6>Contact:</h6>	
+														<p style="margin-bottom:0;">Brand</p>
+														<p style="margin-bottom:0;">Address - ZipCode City</p>
+														<p style="margin-bottom:0;">Phone: <strong>00 00 00 00 00</strong></p>
+														<p>Email: <strong><a href="emailto:your@mail.com">your@mail.com</a></strong></p>
+														<p>Website : <a href="http://www.mywebsite.com/">www.mywebsite.com</a></p>
+													</td>
+												</tr>
+											</table>		
+									</div>
+									<img src="http://placehold.it/500x200" alt="image3" <img src="http://placehold.it/600x250" alt="image3" style="width:100%;" />
+								</td>
+								<td></td>
+							</tr>
+						</table><!-- /BODY -->
+						<!-- FOOTER -->
+						<table id="footer-wrap" border="0" cellpadding="0" cellspacing="0" width="500" bgcolor="#E1E1E1">
+							<tr>
+								<td></td>
+								<td class="container">
+									<!-- content -->
+									<div class="content" style="padding:5px 15px!important;text-aling:center!important;">
+										<table>
+										<tr>	
+											<td align="center">
+						                        <p style="margin-bottom:0;">Copyright &#169; 2014 <a href="#" target="_blank">Brand</a>. All&nbsp;rights&nbsp;reserved.</p>
+						                        <p>If you do not want to recieve emails from us, you can <a href="#" target="_blank" >unsubscribe</a>.</p>
+						                    </td>
+										</tr>
+										</table>
+									</div><!-- /content -->	
+								</td>
+								<td></td>
+							</tr>
+						</table><!-- /FOOTER -->
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>
